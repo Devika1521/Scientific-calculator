@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" id="i1" placeholder="0">
+    <table id="t">
+       
+        <tr>
+            <td id="t1" onclick="td(1)">1</td>
+            <td id="t2" onclick="td(2)">2</td>
+            <td id="t3" onclick="td(3)">3</td>
+            <td id="t4" onclick="td(4)">4</td>
+            <td id="t5" onclick="td(5)">5</td>
+        </tr><br>
+        <tr>
+            <td id="t6" onclick="td(6)">6</td>
+            <td id="t7" onclick="td(7)">7</td>
+            <td id="t8" onclick="td(8)">8</td>
+            <td id="t9" onclick="td(9)">9</td>
+            <td id="t0" onclick="td(0)">0</td>
+        </tr><br>
+        <tr>
+            <td id="plus" onclick="td('+')">+</td>
+            <td id="minus" onclick="td('-')">-</td>
+            <td id="mul" onclick="td('*')">*</td>
+            <td id="divi" onclick="td('/')">/</td>
+            <td id="equals" onclick="td('=')">=</td>
+        </tr><br>
+        <tr>
+            <td id="t6" onclick="td('1/x')">1/x</td>
+            <td id="t7" onclick="td('log')">log</td>
+            <td id="t8" onclick="td('.')">.</td>
+            <td id="t9" onclick="td('AC')" colspan="2">AC</td>
+           
+        </tr>
+    </table>
+    <script>
+        function td(i){
+            try{
+            x=document.getElementById("i1");
+            switch(i){
+            case 1:x.value+=1; break;
+            case 2:x.value+=2; break;
+            case 3:x.value+=3; break;
+            case 4:x.value+=4; break;
+            case 5:x.value+=5; break;
+            case 6:x.value+=6; break;
+            case 7:x.value+=7; break;
+            case 8:x.value+=8; break;
+            case 9:x.value+=9; break;
+            case 0:x.value+=0; break;
+            case '+':x.value+='+';break;
+            case '-':x.value+='-';break;
+            case '*':x.value+='*';break;
+            case '/':x.value+='/';break;
+            case '.':x.value+='.';break;
+            case '=':x.value=eval(x.value);break;
+            case 'log':x.value=eval(Math.log10(x.value));break;
+            case '1/x':x.value=eval(1/x.value);break;
+            case 'AC': x.value="";break;
+             }
+            }
+            catch(err){
+                alert("Invalid Input");
+                x.value="SYNTAX ERROR";
+                
+            }
+        }
+    </script>
+</body>
+</html>
